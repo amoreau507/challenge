@@ -4,10 +4,26 @@
     <base href="/">
     <meta charset="UTF-8">
     <title>Challenge 1</title>
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/ch1.css">
 </head>
 <body>
-<h1>Hello</h1>
+<script>
+
+    function submitAnswer() {
+        var request = new XMLHttpRequest()
+
+        var url = 'http://localhost:8080/ch1/1/rep?rep='+document.getElementById("answer").value
+        request.open('GET', url,true)
+        request.send()
+    }
+</script>
+<div align="center">
+    <form id="form_login">
+        <input type="text" id="answer" class="answer"/>
+        <button onclick="submitAnswer()"></button>
+    </form>
+</div>
 
 </body>
 </html>
